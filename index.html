@@ -1,17 +1,99 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Sheba's Amazing Website</title>
+        <title>Rylie's Amazing Website</title>
+        <style>
+    body {
+        background: rgb(243, 239, 255);
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        font-family: arial;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(212, 197, 255);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px;
+    }
+    nav h1 {
+        display: flex;
+        align-items: center;
+        color: white;
+        flex: 1;
+        margin: 0;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(227, 216, 255);
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+    h2, h3 {
+        margin: 0px;
+    }
+</style>
     </head>
     
     <body>
         <div id="all-contents"> 
             <nav>
-    
+                <h1>rylie's super cool website</h1>
+                <ul>
+                    <li>
+                        <a href="index.html">home</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">portfolio</a>
+                    </li>
+                </ul>
             </nav>
     
             <main>
-    
+                <div class="sidebar">
+                    <img src="https://github.com/OperationSpark/first-website/blob/master/img/hallebot.png?raw=true">
+                </div>
+            
+                <div class="content">
+                  <h2>rylie collins</h2>
+                  <p>student at operation spark</p>
+                  <div class="interests">
+                    <h3>interests</h3>
+                        <ul>
+                            <li>drawing</li>
+                            <li>video games</li>
+                            <li>movies</li>
+                        </ul>
+                  </div>
+                </div>
             </main>
         </div>
     </body>
