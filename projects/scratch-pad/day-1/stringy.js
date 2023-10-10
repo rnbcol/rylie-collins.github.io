@@ -14,7 +14,7 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-    
+    return string.length;
 
 
     // YOUR CODE ABOVE HERE //
@@ -25,11 +25,13 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-
-
+  
+    // make provided string lowercase and return
+    return string.toLowerCase();
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given an input String, return a new String forced to uppercase.
@@ -37,7 +39,8 @@ function toLowerCase(string) {
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
 
-
+    // make provided string uppercase and return
+    return string.toUpperCase();
 
     // YOUR CODE ABOVE HERE //
 }
@@ -58,7 +61,8 @@ function toUpperCase(string) {
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 
-
+    // find spaces in provided string, replace w dashes, and return
+    
 
     // YOUR CODE ABOVE HERE //
 }
