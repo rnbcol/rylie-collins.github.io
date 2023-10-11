@@ -62,7 +62,8 @@ function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 
     // find spaces in provided string, replace w dashes, and return
-    
+
+    console.log(string.replace(' ', '-'));
 
     // YOUR CODE ABOVE HERE //
 }
@@ -81,11 +82,17 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    if (string[0] === char) {
+        return true;
+    } else {
+        return false;
+    }
     
 
     // YOUR CODE ABOVE HERE //
 }
+
+console.log(beginsWith('zero', 'z'));
 
 /**
  * Given an input String and a single character, return true if the String
@@ -115,7 +122,8 @@ function endsWith(string, char) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+    // add two given strings
+    return stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -150,7 +158,11 @@ function join(stringOne, stringTwo) {
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+    if (stringOne.length > stringTwo.length) {
+        return stringOne;
+    } else if (stringOne.length < stringTwo.length) {
+        return stringTwo;
+    }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -165,6 +177,7 @@ function longest(stringOne, stringTwo) {
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
+    
 
 
     // YOUR CODE ABOVE HERE //
