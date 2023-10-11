@@ -25,9 +25,13 @@ function reverseString(input) {
     // create var to return
     var reverseWord;
 
+    // use for loop
+    for (var i = 0; i <= input.length -1; i++) {
+      
+    }
+
     
-    
-    
+
     // YOUR CODE GOES ABOVE HERE //
 }
 

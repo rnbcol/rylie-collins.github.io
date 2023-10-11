@@ -61,7 +61,7 @@ function toUpperCase(string) {
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 
-    // find spaces in provided string, replace w dashes, and return
+    // find spaces in provided string, replace w dashes, and log
 
     console.log(string.replace(' ', '-'));
 
@@ -82,7 +82,7 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-    if (string[0] === char) {
+    if (string[0] == char) {
         return true;
     } else {
         return false;
@@ -92,7 +92,6 @@ function beginsWith(string, char) {
     // YOUR CODE ABOVE HERE //
 }
 
-console.log(beginsWith('zero', 'z'));
 
 /**
  * Given an input String and a single character, return true if the String
