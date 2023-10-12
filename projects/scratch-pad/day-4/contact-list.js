@@ -22,7 +22,7 @@
  *      4. removeContact(contact): takes a contact object to be removed from 
  *         the contact-list.
  *      5. add a printAllContactNames() Function to your makeContactList() factory. The printAllContactNames() Function should 
- *         return a String formated with all the full-names of the separated 
+ *         *return* a String formated with all the full-names of the separated 
  *         with a line-break, like so:
  *          
  *         myContacts.printAllContactNames(); // => Max Gaudin
@@ -43,7 +43,7 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
