@@ -61,9 +61,8 @@ function toUpperCase(string) {
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 
-    // find spaces in provided string, replace w dashes, and log
-
-    console.log(string.replace(' ', '-'));
+    // find spaces in provided string, replace w dashes, make lowercase and return
+    return string.replaceAll(' ', '-').toLowerCase();  
 
     // YOUR CODE ABOVE HERE //
 }
@@ -82,7 +81,7 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-    if (string[0] == char) {
+    if (string[0] === char) {
         return true;
     } else {
         return false;

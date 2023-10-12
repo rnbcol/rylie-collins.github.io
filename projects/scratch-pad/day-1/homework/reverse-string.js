@@ -20,19 +20,21 @@
  */
 
 function reverseString(input) {
-    // YOUR CODE GOES BELOW HERE //
-    
-    // create var to return
-    var reverseWord;
+  // YOUR CODE GOES BELOW HERE //
+  
+  // create var to return
+  var reverseWord = '';
 
-    // use for loop
-    for (var i = 0; i <= input.length -1; i++) {
-      
-    }
+  // use for loop
+  for (var i = input.length - 1; i >= 0; i--) {
+    reverseWord = reverseWord + (input[i]);
+  }
 
-    
+  // return var
+  return reverseWord;
+  
 
-    // YOUR CODE GOES ABOVE HERE //
+  // YOUR CODE GOES ABOVE HERE //
 }
 
 
