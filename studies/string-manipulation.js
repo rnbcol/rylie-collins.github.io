@@ -5,7 +5,7 @@
  * 
  * 1: with operators
  * 
- * 2: with string methods
+ * 2: with string methods - at least 4 ex
  * 
  */
 

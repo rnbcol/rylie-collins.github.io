@@ -11,7 +11,7 @@
  * 
  * 4: logical operators
  * 
- * 5: unary operators
+ * 5: unary operators - not necessary in code
  * 
  * 6: ternary operators
  * 
