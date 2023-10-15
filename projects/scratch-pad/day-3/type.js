@@ -48,10 +48,11 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    if (typeOf(value) === 'object' || Array.isArray(value) === true && value === null && value instanceof Date === false) {
+        return true
+    } else {
+        return false
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -76,7 +77,7 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
+
     // YOUR CODE ABOVE HERE //
 }
 
