@@ -12,17 +12,21 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-    for (var i = 0; i > 100; i++) {
-    if (i % 3 === 0) {
-        i = 'Fizz'
-    } else if (i % 5 === 0) {
-        i = 'Buzz'
-    } else if (i % 3 === 0 || i % 5 === 0) {
-        i = 'FizzBuzz'
+    for (var i = 1; i <= 100; i++) {
+      // if mult of 3 and 5 print FizzBuzz
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } // if mult of 3 print Fizz
+          else if (i % 3 === 0) {
+            console.log("Fizz");
+        } // if mult of 5 print Buzz
+          else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            // print other numbers
+            console.log(i);
+        }
     }
-    return i;
-}
-
     // YOUR CODE GOES ABOVE HERE //
 }
 
