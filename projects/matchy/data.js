@@ -26,6 +26,7 @@ var noises = [];
 noises[0] = 'meow';
 noises.unshift('purr', 'hiss');
 noises[noises.length - 1] = 'mrow'
+noises.push('meow');
 console.log(noises.length);
 console.log(noises[noises.length - 1]);
 console.log(noises);
@@ -33,10 +34,11 @@ console.log(noises);
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-/*
-animal[noises] = noises;
-noises[noises.length - 1] = 'trill'
-*/
+
+animal['noises'] = noises;
+animal.noises.push('trill')
+console.log(animal);
+
 /* *******************************************************************
  * Step 4 - Review
  *
