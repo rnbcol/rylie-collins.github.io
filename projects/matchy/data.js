@@ -92,7 +92,14 @@ console.log(animals.length);
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+var friends = []; // i picked an array because they hold lots of input
+function getRandom(min, max) {
+  return Math.floor(Math.random(animals));
+}
+friends.push(animals[(getRandom())].name);
+console.log(friends);
+bear['friends'] = (friends);
+console.log(friends);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
