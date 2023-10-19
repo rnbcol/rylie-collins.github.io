@@ -40,11 +40,11 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    return function (string) {
-        string.startsWith(startsWith)
-    }
-
-    
+        return function(string) {
+            if (string.startsWith(startsWith)) {
+              return true
+            }
+        }
     // YOUR CODE ABOVE HERE //
 }
 
