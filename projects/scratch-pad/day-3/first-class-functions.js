@@ -11,12 +11,11 @@
  * return a Function that tests whether a given value is greater than the 
  * base.
  */
-function createGreaterThanFilter(base) {
+function createGreaterThanFilter(given, base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    if (base.length === given.length) {
+
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -42,9 +41,7 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     return function (string) {
-        if (string[0] === startsWith) {
-            return true
-        }
+        string.startsWith(startsWith)
     }
 
     
