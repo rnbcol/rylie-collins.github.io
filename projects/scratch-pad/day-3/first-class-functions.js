@@ -11,10 +11,10 @@
  * return a Function that tests whether a given value is greater than the 
  * base.
  */
-function createGreaterThanFilter(given, base) {
+function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    if (base.length === given.length) {
-
+    return function(given) {
+        given > base
     }
     // YOUR CODE ABOVE HERE //
 }
@@ -41,9 +41,7 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
         return function(string) {
-            if (string.startsWith(startsWith)) {
-              return true
-            }
+            return string[0].toUpperCase() === startsWith.toUpperCase();
         }
     // YOUR CODE ABOVE HERE //
 }
@@ -55,10 +53,9 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return function(string) {
+        return string[string.length - 1].toUpperCase() === endsWith.toUpperCase();
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -71,10 +68,10 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    let storage = [];
+    for (let i = 0; i > strings.length - 1; i++) {
+        
+    }
     // YOUR CODE ABOVE HERE //
 }
 
