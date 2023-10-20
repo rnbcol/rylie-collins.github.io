@@ -23,10 +23,17 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
+    let collect = [];
+    if (start < end) {
+        for (let i = start; i <= end; i++) {
+            collect.push(i);
+        }
+    } else if (start > end) {
+        for (let i = start; i >= end; i--) {
+            collect.push(i);
+        }
+    }
+    return collect;
     // YOUR CODE GOES ABOVE HERE //
 }
 
