@@ -32,11 +32,8 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    if (typeOf(value) === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === false) {
-        return true
-    } else {
-        return false
-    }
+    return typeof value === 'object' && !Array.isArray(value) && value !== null && !(value instanceof Date)
+        
     // YOUR CODE ABOVE HERE //
 }
 
@@ -48,11 +45,7 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    if (typeOf(value) === 'object' || Array.isArray(value) === true && value !== null && value instanceof Date === false) {
-        return true
-    } else {
-        return false
-    }
+    return typeof value === 'object' && value !== null && !(value instanceof Date) || Array.isArray(value)
     // YOUR CODE ABOVE HERE //
 }
 
@@ -77,11 +70,25 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-        if (typeOf(value) === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === false) {
-            return 'object';
-        } else if (typeOf(value) == 'object' && Array.isArray(value) === true && value !== null && value instanceof Date === false) {
-            return 'array';
-        } 
+        if (typeof value === "string") {
+            return "string";
+        } else if (Array.isArray(value)) {
+            return "array";
+        } else if (typeof value === 'object' && !Array.isArray(value) && value !== null && !(value instanceof Date)) {
+            return "object";
+        } else if (typeof value === "undefined") {
+            return "undefined";
+        } else if (typeof value === "number") {
+            return "number";
+        } else if (typeof value === "boolean") {
+            return "boolean";
+        } else if (value === null) {
+            return "null";
+        } else if (typeof value === "function") {
+            return "function";
+        } else if (value instanceof Date) {
+            return "date";
+        }
     // YOUR CODE ABOVE HERE //
 }
 
