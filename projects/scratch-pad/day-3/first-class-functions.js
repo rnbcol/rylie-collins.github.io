@@ -14,7 +14,7 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     return function(given) {
-        given > base
+        return given > base;
     }
     // YOUR CODE ABOVE HERE //
 }
@@ -26,10 +26,9 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return function(given) {
+        return given < base;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -69,9 +68,10 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     let storage = [];
-    for (let i = 0; i > strings.length - 1; i++) {
-        
+    for (let i = 0; i < strings.length; i++) {
+        storage.push(modify(strings[i]))
     }
+    return storage;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -86,10 +86,12 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    for (let i = 0; i < strings.length; i++) {
+        if (!test(strings[i])) {
+            return false;
+        }
+    }
+    return true;
     // YOUR CODE ABOVE HERE //
 }
 
