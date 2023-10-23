@@ -26,5 +26,3 @@
 7) In terminal, type => npm install -g opspark
 8) In terminal, type => os install
 
-## Personal access token
-1) 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
