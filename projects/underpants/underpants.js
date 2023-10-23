@@ -21,6 +21,9 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
+function _identity(val) {
+    return val;
+}
 
 /** _.typeOf
 * Arguments:
@@ -42,6 +45,27 @@ var _ = {};
 * _.typeOf([1,2,3]) -> "array"
 */
 
+function _typeOf(value) {
+    if (typeof value === "string") {
+        return "string";
+    } else if (Array.isArray(value)) {
+        return "array";
+    } else if (typeof value === 'object' && !Array.isArray(value) && value !== null && !(value instanceof Date)) {
+        return "object";
+    } else if (typeof value === "undefined") {
+        return "undefined";
+    } else if (typeof value === "number") {
+        return "number";
+    } else if (typeof value === "boolean") {
+        return "boolean";
+    } else if (value === null) {
+        return "null";
+    } else if (typeof value === "function") {
+        return "function";
+    } else if (value instanceof Date) {
+        return "date";
+    }
+}
 
 /** _.first
 * Arguments:
@@ -61,6 +85,15 @@ var _ = {};
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+function _first(array, num) {
+    if (Array.isArray(array) !== true) {
+        return [];
+    }  else if (!num || num === NaN) {
+        return array[0];
+    } else {
+        return 
+    }
+}
 
 /** _.last
 * Arguments:
