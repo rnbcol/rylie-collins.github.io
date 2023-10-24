@@ -21,7 +21,7 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
-function _identity(val) {
+_.identity = function(val) {
     return val;
 }
 
@@ -45,7 +45,7 @@ function _identity(val) {
 * _.typeOf([1,2,3]) -> "array"
 */
 
-function _typeOf(value) {
+_.typeOf = function(value) {
     if (typeof value === "string") {
         return "string";
     } else if (Array.isArray(value)) {
@@ -85,7 +85,7 @@ function _typeOf(value) {
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
-function _first(array, num) {
+_.first = function(array, num) {
     if (Array.isArray(array) !== true) {
         return [];
     }  else if (!num || num === NaN) {
@@ -113,6 +113,17 @@ function _first(array, num) {
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(array, num) {
+    if (num < 0) {
+
+    } else if (num > array.length) {
+
+    } else if (!Array.isArray(array)) {
+        return [];
+    } else if (!num || !num.typeof === 'number') {
+        
+    }
+}
 
 /** _.indexOf
 * Arguments:
@@ -130,6 +141,14 @@ function _first(array, num) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, val) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i]) {
+
+        }
+    }
+
+}
 
 /** _.contains
 * Arguments:
@@ -174,6 +193,9 @@ function _first(array, num) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array) {
+
+}
 
 /** _.filter
 * Arguments:
@@ -276,6 +298,32 @@ function _first(array, num) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func) {
+    let passes = [];
+    // determine if collection is an array
+    if (Array.isArray(collection)) {
+        // determine if function was not provided
+        if (!func) {
+            for (let i = 0; i < collection.length; i++) {
+                // determine if the current item passes the input functions test
+                if (func(collection[i]) === true) {
+                    // if true push item into passes array
+                    passes.push(collection[i]);
+            
+        } else { // else it was
+            
+        }  
+            }
+        }
+    } else { // else its an object
+        // determine if function was not provided
+        if (func === undefined) {
+
+        } else { // else it was
+
+        }
+    }
+}
 
 /** _.some
 * Arguments:
