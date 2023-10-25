@@ -40,7 +40,7 @@ function replace(animals, name, replacement) {
 function remove(animals, name){
     for (var animal of animals) {
         if (animal.name === name) {
-            animals.splice(1);
+            animals.splice(animal, 1);
         }
     }
     return null;
@@ -50,7 +50,9 @@ function remove(animals, name){
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function add(animals, animal) {
+    
+}
 
 /**
  * You did it! You're all done with Matchy!
