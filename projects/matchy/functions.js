@@ -51,7 +51,9 @@ function remove(animals, name){
 //////////////////////////////////////////////////////////////////////
 
 function add(animals, animal) {
-    
+    if (animal.name && animal.name.length > 0 && animal.species && animal.species.length > 0 && ) {
+        animals.push(animal);
+    }
 }
 
 /**

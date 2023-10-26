@@ -371,6 +371,9 @@ _.reduce = function(array, func, seed) {
     // determine if the seed value doesnt exist
     if (seed === undefined) {
         result = array[0]; // first item in array is assigned to result
+        for (let i = 1; i < array.length; i++) {
+            result = func(result, array[i], i)
+        }
     } else { // else it does
         result = seed;
         for (let i = 0; i < array.length; i++) {

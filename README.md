@@ -26,3 +26,6 @@
 7) In terminal, type => npm install -g opspark
 8) In terminal, type => os install
 
+## How to run test
+1) cd ..
+2) copy paste from line 19 into terminal once terminal is in workspace
