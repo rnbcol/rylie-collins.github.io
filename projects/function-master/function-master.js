@@ -3,9 +3,11 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
+    storage = [];
     for (var key in object) {
-        
+        storage.push(object[key])
     }
+    return storage;
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -13,7 +15,11 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+    storage = [];
+  for (var key in object) {
+    storage.push(key)
+  }
+  return storage.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -21,7 +27,13 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    storage = [];
+  for (var key in object) {
+    if (typeof(object[key]) === 'string') {
+      storage.push(object[key]);
+    }
+  }
+  return storage.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -29,9 +41,9 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    if (Array.isArray(collection) === true) {
+    if (Array.isArray(collection)) {
         return 'array'
-    } else {
+    } else if (!Array.isArray(collection) && typeof(collection) === 'object') {
         return 'object'
     }
 }
@@ -41,7 +53,7 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    return string.toUpperCase;
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
