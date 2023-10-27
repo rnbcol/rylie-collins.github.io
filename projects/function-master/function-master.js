@@ -69,7 +69,7 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-    return "Welcome " + object.name + "!";
+    return "Welcome " + object.name.charAt(0).toUpperCase() + object.name.slice(1) + "!";
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -77,7 +77,7 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-    return object.name + " is a " + object.species;
+  return object.name.charAt(0).toUpperCase() + object.name.slice(1) + " is a " + object.species.charAt(0).toUpperCase() + object.species.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -85,7 +85,11 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+  if (object.noises) {
+    return object.noises.join(' ');
+  } else if (!object.noises || object.noises.length ===) {
+    return 'there are no noises'
+  }
 }
 
 //////////////////////////////////////////////////////////////////////
