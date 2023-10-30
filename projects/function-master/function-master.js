@@ -122,11 +122,10 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-  if (object.friends.includes(name)) {
-    return true;
-  } else {
-    return false;
+  if (object && Array.isArray(object.friends)) {
+    return object.friends.includes(name);
   }
+  return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -134,7 +133,13 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+  let storage = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].name !== name && !array[i].friends.includes(name)) {
+      storage.push(array[i].name);
+    }
+  }
+  return storage;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -155,7 +160,11 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+  for (let i = 0; i < array.length; i++) {
+    if (object.hasOwnProperty(array[i])) {
+      delete object[array[i]];
+    }
+  }
 }
 
 //////////////////////////////////////////////////////////////////////
