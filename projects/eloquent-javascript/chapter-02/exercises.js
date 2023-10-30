@@ -5,8 +5,10 @@
 
 // x is number of rows
 function triangles(x) {
-  for (let i = 0; i <= 7; i++) {
-    console.log(i);
+  let array = [];
+  for (let i = 0; i < x; i++) {
+    array.push('#'.repeat(i + 1));
+    console.log(array[i]);
   }
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -14,7 +16,21 @@ function triangles(x) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  
+  for (var i = 1; i <= 15; i++) {
+    // if mult of 3 and 5 print FizzBuzz
+      if (i % 3 === 0 && i % 5 === 0) {
+          console.log("fizzbuzz");
+      } // if mult of 3 print Fizz
+        else if (i % 3 === 0) {
+          console.log("fizz");
+      } // if mult of 5 print Buzz
+        else if (i % 5 === 0) {
+          console.log("buzz");
+      } else {
+          // print other numbers
+          console.log(i);
+      }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
