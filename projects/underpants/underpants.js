@@ -115,13 +115,13 @@ _.first = function(array, num) {
 
 _.last = function(array, num) {
     if (num < 0) {
-
+        return [];
     } else if (num > array.length) {
-
+        return [];
     } else if (!Array.isArray(array)) {
         return [];
     } else if (!num || !num.typeof === 'number') {
-        
+        return array[array.length - 1];
     }
 }
 
@@ -141,13 +141,16 @@ _.last = function(array, num) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-_.indexOf = function(array, val) {
-    for (let i = 0; i < array.length; i++) {
+/*
+for (let i = 0; i < array.length; i++) {
         if (array[i]) {
 
         }
     }
+*/
 
+_.indexOf = function(array, val) {
+    
 }
 
 /** _.contains
@@ -165,6 +168,10 @@ _.indexOf = function(array, val) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function (array, val) {
+    array.includes(val) ? true : false;
+    
+}
 
 /** _.each
 * Arguments:
@@ -182,6 +189,13 @@ _.indexOf = function(array, val) {
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each = function (collection, func) {
+    if (Array.isArray(collection)) {
+        func
+    } else if (!Array.isArray(collection) && typeof collection === 'object') {
+        func
+    }
+}
 
 /** _.unique
 * Arguments:
@@ -194,7 +208,10 @@ _.indexOf = function(array, val) {
 */
 
 _.unique = function(array) {
+    newArray = [];
+    if (!newArray.includes()) {
 
+    }
 }
 
 /** _.filter
@@ -346,6 +363,9 @@ _.every = function(collection, func) {
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function (collection, func) {
+    
+}
 
 /** _.reduce
 * Arguments:
@@ -398,6 +418,11 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function (obj1, obj2) {
+    obj1 = obj2;
+
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
