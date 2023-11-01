@@ -86,12 +86,16 @@ _.typeOf = function(value) {
 */
 
 _.first = function(array, num) {
-    if (Array.isArray(array) !== true) {
+    if (num < 0) {
         return [];
-    }  else if (!num || num === NaN) {
+    } else if (num > array.length) {
+        return array;
+    } else if (!Array.isArray(array)) {
+        return [];
+    } else if (!num || !num.typeof === 'number') {
         return array[0];
     } else {
-        return 
+        return array.slice(0, num);
     }
 }
 
@@ -117,11 +121,13 @@ _.last = function(array, num) {
     if (num < 0) {
         return [];
     } else if (num > array.length) {
-        return [];
+        return array;
     } else if (!Array.isArray(array)) {
         return [];
-    } else if (!num || !num.typeof === 'number') {
+    } else if (!num || !typeof num === 'number') {
         return array[array.length - 1];
+    } else {
+      return array.slice(-num);
     }
 }
 
@@ -169,7 +175,7 @@ _.indexOf = function(array, val) {
 */
 
 _.contains = function (array, val) {
-    array.includes(val) ? true : false;
+    return array.includes(val);
     
 }
 
