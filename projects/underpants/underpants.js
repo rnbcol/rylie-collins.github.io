@@ -236,6 +236,10 @@ _.unique = function(array) {
 *   use _.each in your implementation
 */
 
+_.filter = function (array, func) {
+    return func;
+}
+
 
 /** _.reject
 * Arguments:
