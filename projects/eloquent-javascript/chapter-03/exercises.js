@@ -16,16 +16,29 @@ function min(num1, num2) {
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven() {
-
+function isEven(num) {
+  if (num < 0) {
+    return false;
+  } else if (num % 2 === 1) {
+    return false;
+  } else if (num % 2 === 0) {
+    return true;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
-
+function countChars(string, letter) {
+  var bee = [];
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === letter) {
+      bee.push(string[i])
+    }
+  }
+  var num = bee.length;
+  return num;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -34,7 +47,7 @@ function countChars() {
 
 function countBs(string) {
   var bee = [];
-  for (let i = 0; i > string.length; i++) {
+  for (let i = 0; i < string.length; i++) {
     if (string[i] === 'B') {
       bee.push(string[i])
     }
