@@ -147,16 +147,13 @@ _.last = function(array, num) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-/*
-for (let i = 0; i < array.length; i++) {
-        if (array[i]) {
-
-        }
-    }
-*/
-
 _.indexOf = function(array, val) {
-    
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === val) {
+            return i;
+        }
+    } 
+    return -1;
 }
 
 /** _.contains
@@ -175,7 +172,6 @@ _.indexOf = function(array, val) {
 */
 
 _.contains = function (array, val) {
-    return array.includes(val);
     
 }
 
@@ -197,9 +193,9 @@ _.contains = function (array, val) {
 
 _.each = function (collection, func) {
     if (Array.isArray(collection)) {
-        func
+        
     } else if (!Array.isArray(collection) && typeof collection === 'object') {
-        func
+        
     }
 }
 
@@ -214,10 +210,7 @@ _.each = function (collection, func) {
 */
 
 _.unique = function(array) {
-    newArray = [];
-    if (!newArray.includes()) {
-
-    }
+    
 }
 
 /** _.filter
@@ -237,7 +230,13 @@ _.unique = function(array) {
 */
 
 _.filter = function (array, func) {
-    return func;
+    let output = [];
+    for (let i = 0; i < array.length; i++) {
+        if (func(array[i], i, array)) {
+            output.push(array[i]);
+        }
+    }
+    return output;
 }
 
 
@@ -254,6 +253,9 @@ _.filter = function (array, func) {
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function (array, func) {
+
+}
 
 /** _.partition
 * Arguments:
@@ -274,6 +276,9 @@ _.filter = function (array, func) {
 }
 */
 
+_.partition = function (array, func) {
+
+}
 
 /** _.map
 * Arguments:
@@ -291,6 +296,9 @@ _.filter = function (array, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function (collection, func) {
+
+}
 
 /** _.pluck
 * Arguments:
@@ -303,6 +311,9 @@ _.filter = function (array, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function (array, prop) {
+
+}
 
 /** _.every
 * Arguments:
@@ -429,8 +440,7 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function (obj1, obj2) {
-    obj1 = obj2;
+_.extend = function (obj1, obj2) { 
 
 }
 
