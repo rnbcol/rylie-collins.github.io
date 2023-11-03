@@ -172,7 +172,7 @@ _.indexOf = function(array, val) {
 */
 
 _.contains = function (array, val) {
-    
+    return array.includes(val) ? true : false
 }
 
 /** _.each
@@ -193,9 +193,13 @@ _.contains = function (array, val) {
 
 _.each = function (collection, func) {
     if (Array.isArray(collection)) {
-        
+        for (let i = 0; i < collection.length; i++) {
+            func(collection[i], i, collection);
+        }
     } else if (!Array.isArray(collection) && typeof collection === 'object') {
-        
+        for (var key in collection) {
+            func(collection[key], key, collection)
+        }
     }
 }
 
@@ -210,10 +214,10 @@ _.each = function (collection, func) {
 */
 
 _.unique = function(array) {
-    output = [];
+    var output = [];
     for (let i = 0; i < array.length; i++) {
-        if (!output.includes()) {
-            output.push[i]
+        if (!output.includes(array[i])) {
+            output.push(array[i])
         }
     }
     return output;
@@ -260,7 +264,13 @@ _.filter = function (array, func) {
 */
 
 _.reject = function (array, func) {
-
+    var output = []; // array to return
+    for (let i = 0; i < array.length; i++) { // iterate through given array 
+        if (!func(array[i], i, array)) { // test if returning false / not passing test
+            output.push(array[i]); // push to output if returned false
+        }
+    }
+    return output; // return
 }
 
 /** _.partition
@@ -283,7 +293,15 @@ _.reject = function (array, func) {
 */
 
 _.partition = function (array, func) {
-
+    var output = [[], []]; // to return
+    for (let i = 0; i < array.length; i++) { // iterate over array
+        if (func(array[i], i, array)) { // test if truthy
+            output[0].push(array[i]);
+        } else if (!func(array[i], i, array)) { // test if falsey
+            output[1].push(array[i]);
+        } // if truthy push output[0] else if falsey push output[1]        
+    }
+    return output;
 }
 
 /** _.map
@@ -303,7 +321,18 @@ _.partition = function (array, func) {
 */
 
 _.map = function (collection, func) {
-
+    var output = []; // to return
+    if (Array.isArray(collection)) { // if array
+        for (let i = 0; i < collection.length; i++) { // iterate
+            output.push(func(collection[i], i, collection)); // call func on each element
+        }
+    } else if (!Array.isArray(collection) && typeof collection === 'object') { // if object
+        for (var key in collection) { // iterate
+            output.push(func(collection[key], key, collection)); // call func on each element
+        }
+         
+    }
+    return output; // return
 }
 
 /** _.pluck
