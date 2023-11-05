@@ -420,7 +420,25 @@ _.every = function(collection, func) {
 */
 
 _.some = function (collection, func) {
-    
+    if (!func) {
+        return false;
+    } else if (Array.isArray(collection)) { // if array
+        for (let i = 0; i < collection.length; i++) { // iterate
+            if (func(collection[i], i, collection)) {
+                return true; // if true return true
+            } else if (!func(collection[i], i, collection)) {
+                return false;
+            }
+        }
+    } else if (!Array.isArray(collection) && typeof collection === 'object') { // if object
+        for (var key in collection) { // iterate
+            if (func(collection[key], key, collection)) {
+                return true; // if true return true
+            } else if (!func(collection[key], key, collection)) {
+                return false;
+            }
+        }
+    }
 }
 
 /** _.reduce
@@ -476,7 +494,7 @@ _.reduce = function(array, func, seed) {
 */
 
 _.extend = function (obj1, obj2) { 
-
+    obj1 = obj2;
 }
 
 //////////////////////////////////////////////////////////////////////
