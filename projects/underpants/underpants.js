@@ -347,7 +347,9 @@ _.map = function (collection, func) {
 */
 
 _.pluck = function (array, prop) {
-
+     return _.map(array, function(obj) {
+        return obj[prop]; // value of prop
+     });
 }
 
 /** _.every
@@ -495,6 +497,7 @@ _.reduce = function(array, func, seed) {
 
 _.extend = function (obj1, obj2) { 
     obj1 = obj2;
+    return obj1;
 }
 
 //////////////////////////////////////////////////////////////////////
