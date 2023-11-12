@@ -374,31 +374,30 @@ _.pluck = function (array, prop) {
 */
 
 _.every = function(collection, func) {
-    let passes = [];
-    // determine if collection is an array
-    if (Array.isArray(collection)) {
-        // determine if function was not provided
-        if (!func) {
-            for (let i = 0; i < collection.length; i++) {
-                // determine if the current item passes the input functions test
-                if (func(collection[i]) === true) {
-                    // if true push item into passes array
-                    passes.push(collection[i]);
-            
-        } else { // else it was
-            
-        }  
+    if (!func) {
+         for (var val of Object.values(collection)) {
+            if (!val) {
+                return false;
             }
         }
-    } else { // else its an object
-        // determine if function was not provided
-        if (func === undefined) {
-
-        } else { // else it was
-
+        return true;
+    }
+    if (Array.isArray(collection)) {
+        for (let i = 0; i < collection.length; i++) {
+            if (!func(collection[i], i, collection)) { // check if false
+                return false;
+            }
+        }
+    } else if (typeof collection === 'object') {
+        for (var key in collection) {
+            if (!func(collection[key], key, collection)) { // check if false 
+                return false;
+            }
         }
     }
-}
+
+    return true; // otherwise return true
+};
 
 /** _.some
 * Arguments:
@@ -423,24 +422,26 @@ _.every = function(collection, func) {
 
 _.some = function (collection, func) {
     if (!func) {
-        return false;
+        for (let i = 0; i < collection.length; i++) {
+            if (collection[i]) {
+                return true;
+            }
+        }
+        return false
     } else if (Array.isArray(collection)) { // if array
         for (let i = 0; i < collection.length; i++) { // iterate
             if (func(collection[i], i, collection)) {
                 return true; // if true return true
-            } else if (!func(collection[i], i, collection)) {
-                return false;
             }
         }
     } else if (!Array.isArray(collection) && typeof collection === 'object') { // if object
         for (var key in collection) { // iterate
             if (func(collection[key], key, collection)) {
                 return true; // if true return true
-            } else if (!func(collection[key], key, collection)) {
-                return false;
             }
         }
     }
+    return false;
 }
 
 /** _.reduce
@@ -495,8 +496,15 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function (obj1, obj2) { 
-    obj1 = obj2;
+_.extend = function (obj1) { 
+    for (let i = 0; i < arguments.length; i++) { // loop through num of args
+        var currentObj = arguments[i];
+        for (var key in currentObj) { // loop through keys in current obj
+            if (currentObj.hasOwnProperty(key)) {
+                obj1[key] = currentObj[key]; // assign the props of current obj to obj1
+            }
+        }
+    }
     return obj1;
 }
 
