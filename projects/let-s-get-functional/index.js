@@ -29,7 +29,7 @@ var maleCount = function(array) {
 };
 
 var femaleCount;
-
+ 
 var oldestCustomer;
 
 var youngestCustomer;

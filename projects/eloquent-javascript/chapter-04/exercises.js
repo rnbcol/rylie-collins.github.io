@@ -21,9 +21,9 @@ function range(start, end, step=1) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function sum(nums) {
-  total = 0;
-  for (let i = 0; i <= nums.length; i++) {
-    total += i;
+  var total = 0;
+  for (var i in nums) {
+    total = total + nums[i];
   }
   return total;
 }
@@ -94,6 +94,7 @@ function nth(list, num) {
   // base
   
   // recursion
+  
 }
 
 ////////////////////////////////////////////////////////////////////////////////
